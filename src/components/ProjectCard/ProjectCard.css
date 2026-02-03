@@ -125,7 +125,7 @@
 
 .project-card.floral-special .project-info {
   background: linear-gradient(to top, rgba(0, 0, 0, 0.2) 0%, transparent 40%),
-              url('/images/header-background.png');
+              url('./images/header-background.jpg');
   background-size: cover;
   background-position: center;
   position: relative;
