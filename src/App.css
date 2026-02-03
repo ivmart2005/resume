@@ -6,7 +6,7 @@
   padding: 60px 20px;
   background: 
     radial-gradient(circle, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.2) 100%),
-    url('./images/header-background.jpg');
+    url('/resume/images/header-background.jpg');;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -38,7 +38,7 @@
   position: relative;
   padding: 56px 0;
   background: 
-    url('./images/header-background.jpg') no-repeat center center;
+    url('/resume/images/header-background.jpg') no-repeat center center;
   background-size: cover;
 }
 
