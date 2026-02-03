@@ -4,9 +4,6 @@
   justify-content: center;
   align-items: flex-start;
   padding: 60px 20px;
-  background: 
-    radial-gradient(circle, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.2) 100%),
-    url('/resume/images/header-background.jpg');;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -37,8 +34,8 @@
   width: 100%;
   position: relative;
   padding: 56px 0;
-  background: 
-    url('/resume/images/header-background.jpg') no-repeat center center;
+  background-repeat: no-repeat;
+  background-position: center center;
   background-size: cover;
 }
 

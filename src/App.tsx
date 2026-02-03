@@ -3,10 +3,12 @@ import ProjectCard from './components/ProjectCard/ProjectCard';
 import { projectsData } from './data/projectsData';
 
 const App = () => {
+  const headerBg = `${import.meta.env.BASE_URL}images/header-background.jpg`;
+
   return (
-    <div className="app">
+    <div className="app" style={{ backgroundImage: `url(${headerBg})` }}>
       <main className="resume">
-        <header className="resume-header">
+        <header className="resume-header" style={{ backgroundImage: `url(${headerBg})` }}>
           <div className="content-wrapper">
             <h1 className="name">Мартемьянов Иван Алексеевич</h1>
             <p className="competence">Фронтенд-разработка</p>
@@ -55,17 +57,17 @@ const App = () => {
 
             <section className="info-section">
               <h2 className="section-title">Проекты</h2>
-                <div className="projects-container">
-                  {projectsData.map((project, index) => (
-                    <ProjectCard 
-                      key={index}
-                      title={project.title}
-                      description={project.description}
-                      images={project.images}
-                      className={project.className}
-                    />
-                  ))}
-                </div>
+              <div className="projects-container">
+                {projectsData.map((project, index) => (
+                  <ProjectCard 
+                    key={index}
+                    title={project.title}
+                    description={project.description}
+                    images={project.images}
+                    className={project.className}
+                  />
+                ))}
+              </div>
             </section>
           </div>
         </div>
