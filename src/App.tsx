@@ -42,6 +42,7 @@ const App = () => {
                   <div className="sub-list">
                     <p>- Python, C#</p>
                     <p>- Проектирование баз данных, SQL</p>
+                    <p>- Изучаю Node.js</p>
                   </div>
                 </li>
                 <li>
@@ -50,6 +51,7 @@ const App = () => {
                     <p>- DevOps, Git, Docker</p>
                     <p>- UX/UI дизайн</p>
                     <p>- Разработка игр</p>
+                    <p>- B2 английский</p>
                   </div>
                 </li>
               </ul>
@@ -64,6 +66,7 @@ const App = () => {
                     title={project.title}
                     description={project.description}
                     images={project.images}
+                    imageDescriptions={project.imageDescriptions}
                     className={project.className}
                   />
                 ))}

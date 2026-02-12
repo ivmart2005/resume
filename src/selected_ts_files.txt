@@ -1,0 +1,684 @@
+Файл: C:\Users\Дом\Desktop\Резюме февраль\react-resume\src\App.css
+================================================================================
+.app {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 60px 20px;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.resume {
+  width: 100%;
+  max-width: 900px;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 
+    0 10px 30px rgba(0, 0, 0, 0.3), 
+    0 30px 100px rgba(0, 0, 0, 0.5);
+}
+
+.content-wrapper {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
+.resume-header {
+  width: 100%;
+  position: relative;
+  padding: 56px 0;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.name, .framework {
+  color: rgba(255, 255, 255, 0.85);
+  text-shadow: 
+    0px 0px 1px rgba(255, 255, 255, 0.8),
+    0px 0px 12px rgba(255, 255, 255, 0.3),
+    0px 4px 6px rgba(0, 0, 0, 0.25);
+  background: linear-gradient(to bottom, #fff 0%, #fff 45%, #d1d1d1 50%, #fff 55%, #fff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 0.5px rgba(255,255,255,0.5));
+}
+
+.name { font-size: 42px; font-weight: 800; line-height: 1.1; margin: 0 0 16px 0; letter-spacing: -1px; }
+.competence { font-size: 20px; font-weight: 500; margin: 0 0 6px 0; letter-spacing: 2px; text-transform: uppercase; color: rgba(255, 255, 255, 0.7); }
+.framework { font-size: 44px; font-weight: 900; line-height: 1; }
+
+.main-content {
+  width: 100%;
+  padding: 35px 0 60px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.section-title {
+  font-size: 38px;
+  font-weight: 800;
+  margin-bottom: 16px;
+  letter-spacing: -1px;
+  background: linear-gradient(to bottom, #111 0%, #222 46%, #444 50%, #111 54%, #000 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0px 1px 1px rgba(0,0,0,0.05));
+}
+
+.info-section {
+  width: 100%;
+}
+
+.info-section:first-of-type {
+  margin-bottom: 36px;
+}
+
+.projects-container {
+  width: 100%;
+}
+
+.item-main { font-weight: 700; font-size: 19px; color: #1a1a1a; margin: 0; }
+.item-sub { font-size: 15px; color: #666; margin: 4px 0; display: block; }
+.info-list { list-style: none; padding: 0; margin: 0; }
+
+.info-list > li {
+  margin-bottom: 16px;
+  font-size: 19px;
+  font-weight: 700;
+  color: #1a1a1a;
+  line-height: 1.4;
+}
+
+.sub-list { margin-top: 8px; padding-left: 18px; }
+.sub-list p { margin: 4px 0; font-size: 16px; font-weight: 400; color: #444; }
+
+@media (max-width: 767px) {
+  .app { 
+    background: #ffffff;
+    padding: 0; 
+  }
+  
+  .resume { 
+    border-radius: 0; 
+    box-shadow: none;
+  }
+
+  .content-wrapper, .resume-header .content-wrapper { 
+    padding: 0 24px; 
+  }
+
+  .name { font-size: 32px; }
+  .framework { font-size: 36px; }
+  .section-title { font-size: 30px; }
+  .main-content { padding-top: 24px; }
+}
+--------------------------------------------------------------------------------
+
+Файл: C:\Users\Дом\Desktop\Резюме февраль\react-resume\src\App.tsx
+================================================================================
+import './App.css';
+import ProjectCard from './components/ProjectCard/ProjectCard';
+import { projectsData } from './data/projectsData';
+
+const App = () => {
+  const headerBg = `${import.meta.env.BASE_URL}images/header-background.jpg`;
+
+  return (
+    <div className="app" style={{ backgroundImage: `url(${headerBg})` }}>
+      <main className="resume">
+        <header className="resume-header" style={{ backgroundImage: `url(${headerBg})` }}>
+          <div className="content-wrapper">
+            <h1 className="name">Мартемьянов Иван Алексеевич</h1>
+            <p className="competence">Фронтенд-разработка</p>
+            <p className="framework">React + TS</p>
+          </div>
+        </header>
+
+        <div className="main-content">
+          <div className="content-wrapper">
+            <section className="info-section">
+              <h2 className="section-title">Образование</h2>
+              <div className="section-item">
+                <p className="item-main">НИУ ВШЭ Пермь</p>
+                <p className="item-sub">Разработка информационных систем, Программная инженерия, 3 курс</p>
+              </div>
+            </section>
+
+            <section className="info-section">
+              <h2 className="section-title">Компетенции</h2>
+              <ul className="info-list">
+                <li>
+                  • Фронтенд-разработка
+                  <div className="sub-list">
+                    <p>- React</p>
+                    <p>- Javascript, Typescript</p>
+                    <p>- HTML, CSS</p>
+                  </div>
+                </li>
+                <li>
+                  • Бэкенд-разработка
+                  <div className="sub-list">
+                    <p>- Python, C#</p>
+                    <p>- Проектирование баз данных, SQL</p>
+                  </div>
+                </li>
+                <li>
+                  • Прочие компетенции
+                  <div className="sub-list">
+                    <p>- DevOps, Git, Docker</p>
+                    <p>- UX/UI дизайн</p>
+                    <p>- Разработка игр</p>
+                  </div>
+                </li>
+              </ul>
+            </section>
+
+            <section className="info-section">
+              <h2 className="section-title">Проекты</h2>
+              <div className="projects-container">
+                {projectsData.map((project, index) => (
+                  <ProjectCard 
+                    key={index}
+                    title={project.title}
+                    description={project.description}
+                    images={project.images}
+                    className={project.className}
+                  />
+                ))}
+              </div>
+            </section>
+          </div>
+        </div>
+      </main>
+    </div>
+  );
+};
+
+export default App;
+--------------------------------------------------------------------------------
+
+Файл: C:\Users\Дом\Desktop\Резюме февраль\react-resume\src\components\ProjectCard\ProjectCard.css
+================================================================================
+.project-card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 32px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  max-height: 1000px;
+  height: auto;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, 
+              max-height 0.8s cubic-bezier(0.25, 1, 0.5, 1), 
+              height 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+.project-visual {
+  width: 100%;
+  height: 250px;
+  background: #eee;
+  overflow: hidden;
+  cursor: pointer;
+  z-index: 2;
+  transition: width 0.6s cubic-bezier(0.25, 1, 0.5, 1), 
+              height 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.project-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: object-position 0.6s ease;
+}
+
+.project-info {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+  z-index: 1;
+  transition: transform 0.6s ease, opacity 0.4s ease, width 0.6s ease, padding 0.6s ease;
+}
+
+.project-card-title {
+  font-size: 24px;
+  font-weight: 800;
+  margin: 0 0 12px 0;
+  color: #1a1a1a;
+}
+
+.project-card-description {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.6;
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .project-card {
+    flex-direction: row;
+    height: 380px;
+  }
+
+  .project-card.figure-special {
+    height: 715px;
+  }
+
+  .project-visual {
+    width: 60%;
+    height: 100%;
+  }
+
+  .project-info {
+    width: 40%;
+  }
+
+  .project-card.expanded {
+    height: auto !important;
+    min-height: 380px;
+    max-height: 2500px;
+  }
+
+  .project-card.figure-special.expanded {
+    max-height: 3000px;
+  }
+
+  .project-card.expanded .project-visual {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 380px;
+  }
+
+  .project-card.expanded .project-img {
+    height: auto;
+    object-fit: contain;
+  }
+
+  .project-card.expanded .project-info {
+    width: 0;
+    padding: 0;
+    opacity: 0;
+    pointer-events: none;
+    overflow: hidden;
+    position: absolute;
+  }
+}
+
+@media (max-width: 767px) {
+  .project-card.figure-special {
+    min-height: 715px !important;
+  }
+
+  .project-card.figure-special .project-visual {
+    height: 495px !important;
+    min-height: 495px !important;
+  }
+}
+
+.project-card.floral-special .project-info {
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.project-card.floral-special .project-card-title,
+.project-card.floral-special .project-card-description {
+  background: linear-gradient(to bottom, #fff 0%, #fff 45%, #d1d1d1 50%, #fff 55%, #fff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0px 0px 1px rgba(255, 255, 255, 0.8),
+               0px 0px 12px rgba(255, 255, 255, 0.3),
+               0px 4px 6px rgba(0, 0, 0, 0.25);
+  filter: drop-shadow(0 0 0.5px rgba(255,255,255,0.5));
+}
+
+.project-card.floral-special .project-card-title {
+  font-size: 26px;
+  letter-spacing: -0.5px;
+}
+
+.project-card.floral-special .project-card-description {
+  font-weight: 500;
+  opacity: 0.95;
+}
+
+@media (max-width: 767px) {
+  .project-card.floral-special .project-info {
+    border-left: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+}
+--------------------------------------------------------------------------------
+
+Файл: C:\Users\Дом\Desktop\Резюме февраль\react-resume\src\components\ProjectCard\ProjectCard.css
+================================================================================
+.project-card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 32px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  max-height: 1000px;
+  height: auto;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, 
+              max-height 0.8s cubic-bezier(0.25, 1, 0.5, 1), 
+              height 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+.project-visual {
+  width: 100%;
+  height: 250px;
+  background: #eee;
+  overflow: hidden;
+  cursor: pointer;
+  z-index: 2;
+  transition: width 0.6s cubic-bezier(0.25, 1, 0.5, 1), 
+              height 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.project-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: object-position 0.6s ease;
+}
+
+.project-info {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+  z-index: 1;
+  transition: transform 0.6s ease, opacity 0.4s ease, width 0.6s ease, padding 0.6s ease;
+}
+
+.project-card-title {
+  font-size: 24px;
+  font-weight: 800;
+  margin: 0 0 12px 0;
+  color: #1a1a1a;
+}
+
+.project-card-description {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.6;
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .project-card {
+    flex-direction: row;
+    height: 380px;
+  }
+
+  .project-card.figure-special {
+    height: 715px;
+  }
+
+  .project-visual {
+    width: 60%;
+    height: 100%;
+  }
+
+  .project-info {
+    width: 40%;
+  }
+
+  .project-card.expanded {
+    height: auto !important;
+    min-height: 380px;
+    max-height: 2500px;
+  }
+
+  .project-card.figure-special.expanded {
+    max-height: 3000px;
+  }
+
+  .project-card.expanded .project-visual {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 380px;
+  }
+
+  .project-card.expanded .project-img {
+    height: auto;
+    object-fit: contain;
+  }
+
+  .project-card.expanded .project-info {
+    width: 0;
+    padding: 0;
+    opacity: 0;
+    pointer-events: none;
+    overflow: hidden;
+    position: absolute;
+  }
+}
+
+@media (max-width: 767px) {
+  .project-card.figure-special {
+    min-height: 715px !important;
+  }
+
+  .project-card.figure-special .project-visual {
+    height: 495px !important;
+    min-height: 495px !important;
+  }
+}
+
+.project-card.floral-special .project-info {
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.project-card.floral-special .project-card-title,
+.project-card.floral-special .project-card-description {
+  background: linear-gradient(to bottom, #fff 0%, #fff 45%, #d1d1d1 50%, #fff 55%, #fff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0px 0px 1px rgba(255, 255, 255, 0.8),
+               0px 0px 12px rgba(255, 255, 255, 0.3),
+               0px 4px 6px rgba(0, 0, 0, 0.25);
+  filter: drop-shadow(0 0 0.5px rgba(255,255,255,0.5));
+}
+
+.project-card.floral-special .project-card-title {
+  font-size: 26px;
+  letter-spacing: -0.5px;
+}
+
+.project-card.floral-special .project-card-description {
+  font-weight: 500;
+  opacity: 0.95;
+}
+
+@media (max-width: 767px) {
+  .project-card.floral-special .project-info {
+    border-left: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+}
+--------------------------------------------------------------------------------
+
+Файл: C:\Users\Дом\Desktop\Резюме февраль\react-resume\src\components\ProjectCard\ProjectCard.tsx
+================================================================================
+import React, { useState } from 'react';
+import './ProjectCard.css';
+
+interface ProjectProps {
+  title: string;
+  description: string;
+  images: string[];
+  className?: string;
+}
+
+const ProjectCard: React.FC<ProjectProps> = ({ title, description, images, className }) => {
+  const [isExpanded, setIsExpanded] = useState(false);
+  const headerBg = `${import.meta.env.BASE_URL}images/header-background.jpg`;
+
+  const toggleExpand = () => {
+    if (window.innerWidth >= 768) {
+      setIsExpanded(!isExpanded);
+    }
+  };
+
+  const infoStyle = className === 'floral-special' 
+    ? { backgroundImage: `linear-gradient(to top, rgba(0, 0, 0, 0.2) 0%, transparent 40%), url(${headerBg})` } 
+    : {};
+
+  return (
+    <div className={`project-card ${className || ''} ${isExpanded ? 'expanded' : ''}`}>
+      <div className="project-visual" onClick={toggleExpand}>
+        <img src={images[0]} alt={title} className="project-img" />
+      </div>
+      <div className="project-info" style={infoStyle}>
+        <h3 className="project-card-title">{title}</h3>
+        <p className="project-card-description">{description}</p>
+      </div>
+    </div>
+  );
+};
+
+export default ProjectCard;
+--------------------------------------------------------------------------------
+
+Файл: C:\Users\Дом\Desktop\Резюме февраль\react-resume\src\components\ProjectCard\ProjectCard.tsx
+================================================================================
+import React, { useState } from 'react';
+import './ProjectCard.css';
+
+interface ProjectProps {
+  title: string;
+  description: string;
+  images: string[];
+  className?: string;
+}
+
+const ProjectCard: React.FC<ProjectProps> = ({ title, description, images, className }) => {
+  const [isExpanded, setIsExpanded] = useState(false);
+  const headerBg = `${import.meta.env.BASE_URL}images/header-background.jpg`;
+
+  const toggleExpand = () => {
+    if (window.innerWidth >= 768) {
+      setIsExpanded(!isExpanded);
+    }
+  };
+
+  const infoStyle = className === 'floral-special' 
+    ? { backgroundImage: `linear-gradient(to top, rgba(0, 0, 0, 0.2) 0%, transparent 40%), url(${headerBg})` } 
+    : {};
+
+  return (
+    <div className={`project-card ${className || ''} ${isExpanded ? 'expanded' : ''}`}>
+      <div className="project-visual" onClick={toggleExpand}>
+        <img src={images[0]} alt={title} className="project-img" />
+      </div>
+      <div className="project-info" style={infoStyle}>
+        <h3 className="project-card-title">{title}</h3>
+        <p className="project-card-description">{description}</p>
+      </div>
+    </div>
+  );
+};
+
+export default ProjectCard;
+--------------------------------------------------------------------------------
+
+Файл: C:\Users\Дом\Desktop\Резюме февраль\react-resume\src\data\projectsData.ts
+================================================================================
+export interface Project {
+  title: string;
+  description: string;
+  images: string[];
+  className?: string;
+}
+
+export const projectsData: Project[] = [
+{
+    title: "Бутон - графический редактор для флористов",
+    description: "Делать букеты. В активной разработке",
+    images: ["./images/projects/floral-editor/picture1.jpg"],
+    className: "floral-special"
+  },
+  {
+    title: "Игра на React",
+    description: "Браузерная игра с использованием React и TypeScript. Заброшено",
+    images: ["./images/projects/react-game/picture1.jpg"]
+  },
+  {
+    title: "Интернет-магазин цветов",
+    description: "Классический интернет-магазин с каталогом и корзиной. В разработке",
+    images: ["./images/projects/floral-market/picture1.jpg"]
+  },
+  {
+    title: "Кукла",
+    description: "Сшито",
+    images: ["./images/projects/figure/picture1.jpg"],
+    className: "figure-special"
+  }
+];
+--------------------------------------------------------------------------------
+
+Файл: C:\Users\Дом\Desktop\Резюме февраль\react-resume\src\index.css
+================================================================================
+@import '@fontsource/inter';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+--------------------------------------------------------------------------------
+
+Файл: C:\Users\Дом\Desktop\Резюме февраль\react-resume\src\main.tsx
+================================================================================
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
+import './index.css'
+import App from './App.tsx'
+
+createRoot(document.getElementById('root')!).render(
+  <StrictMode>
+    <App />
+  </StrictMode>,
+)
+
+--------------------------------------------------------------------------------
+
