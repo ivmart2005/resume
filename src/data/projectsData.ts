@@ -39,7 +39,7 @@ export const projectsData: Project[] = [
     images: [
       "./images/projects/pro-boi/screenshot.jpg",
     ],
-    imageDescriptions: [`Под руководством ментора разрабатываю фронтенд-часть портала для единоборств на Next.js 12, TypeScript, в рамках командного преокта на GitLab.`]
+    imageDescriptions: [`Под руководством ментора разрабатываю фронтенд-часть портала для единоборств на Next.js 12, TypeScript, в рамках командного проекта на GitLab.`]
   },
   {
     title: "Интернет-магазин цветов",
