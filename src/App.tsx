@@ -23,6 +23,10 @@ const App = () => {
               <div className="section-item">
                 <p className="item-main">НИУ ВШЭ Пермь</p>
                 <p className="item-sub">Разработка информационных систем, Программная инженерия, 3 курс</p>
+                <p className="item-main">Курсы</p>
+                <p className="item-sub">Интенсив по фронтенду, React, Тинькофф банк</p>
+                <p className="item-main">Практика</p>
+                <p className="item-sub">Прохожу практику как фронтенд-разработчки (Next.js 12, Node.js) в ООО "ПроБои"</p>
               </div>
             </section>
 
@@ -32,9 +36,9 @@ const App = () => {
                 <li>
                   • Фронтенд-разработка
                   <div className="sub-list">
-                    <p>- React</p>
+                    <p>- React, Next.js</p>
                     <p>- Javascript, Typescript</p>
-                    <p>- HTML, CSS</p>
+                    <p>- HTML, CSS, SCSS</p>
                   </div>
                 </li>
                 <li>
@@ -61,7 +65,7 @@ const App = () => {
               <h2 className="section-title">Проекты</h2>
               <div className="projects-container">
                 {projectsData.map((project, index) => (
-                  <ProjectCard 
+                  <ProjectCard
                     key={index}
                     title={project.title}
                     description={project.description}

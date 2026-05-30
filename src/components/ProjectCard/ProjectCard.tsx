@@ -9,6 +9,29 @@ interface ProjectProps {
   className?: string;
 }
 
+const renderTextWithLinks = (text: string) => {
+  const urlRegex = /(buton-editor\.ru)/g;
+  const parts = text.split(urlRegex);
+
+  return parts.map((part, index) => {
+    if (part.match(urlRegex)) {
+      return (
+        <a
+          key={index}
+          href="https://buton-editor.ru"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="project-link"
+          onClick={(e) => e.stopPropagation()}
+        >
+          {part}
+        </a>
+      );
+    }
+    return part;
+  });
+};
+
 const ProjectCard: React.FC<ProjectProps> = ({ title, description, images, imageDescriptions, className }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [currentImgIndex, setCurrentImgIndex] = useState(0);
@@ -41,7 +64,7 @@ const ProjectCard: React.FC<ProjectProps> = ({ title, description, images, image
   return (
     <div className={`project-card ${className || ''} ${isExpanded ? 'expanded' : ''}`}>
       <div className="project-visual" onClick={toggleExpand}>
-        
+
         {images.length > 1 && (
           <div className="slider-nav">
             <button className="nav-arrow prev" onClick={prevSlide} aria-label="Previous"></button>
@@ -56,10 +79,10 @@ const ProjectCard: React.FC<ProjectProps> = ({ title, description, images, image
           loading="lazy"
         />
       </div>
-      
+
       <div className="project-info" style={infoStyle}>
         <h3 className="project-card-title">{title}</h3>
-        <p className="project-card-description">{currentDescription}</p>
+        <p className="project-card-description">{renderTextWithLinks(currentDescription)}</p>
       </div>
     </div>
   );

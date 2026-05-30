@@ -19,17 +19,14 @@
   flex-direction: column;
   border-radius: 24px;
   overflow: hidden;
-  box-shadow: 
-    0 10px 30px rgba(0, 0, 0, 0.3), 
-    0 30px 100px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 
+              0 30px 100px rgba(0, 0, 0, 0.5);
 }
 
 .content-wrapper {
   width: 100%;
-  max-width: 100%;
   box-sizing: border-box;
-  padding-left: 60px;
-  padding-right: 60px;
+  padding: 0 60px;
 }
 
 .resume-header {
@@ -37,25 +34,44 @@
   position: relative;
   padding: 56px 0;
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position: center;
   background-size: cover;
 }
 
-.name, .framework {
+.name,
+.framework {
   color: rgba(255, 255, 255, 0.85);
-  text-shadow: 
-    0px 0px 1px rgba(255, 255, 255, 0.8),
-    0px 0px 12px rgba(255, 255, 255, 0.3),
-    0px 4px 6px rgba(0, 0, 0, 0.25);
+  text-shadow: 0 0 2px rgba(255, 255, 255, 0.8),
+               0 0 10px rgba(255, 255, 255, 0.3),
+               0 6px 6px rgba(0, 0, 0, 0.25);
   background: linear-gradient(to bottom, #fff 0%, #fff 45%, #d1d1d1 50%, #fff 55%, #fff 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 0 0.5px rgba(255,255,255,0.5));
+  filter: drop-shadow(0 0 1px rgba(255, 255, 255, 0.5));
 }
 
-.name { font-size: 42px; font-weight: 800; line-height: 1.1; margin: 0 0 16px 0; letter-spacing: -1px; }
-.competence { font-size: 20px; font-weight: 500; margin: 0 0 6px 0; letter-spacing: 2px; text-transform: uppercase; color: rgba(255, 255, 255, 0.7); }
-.framework { font-size: 44px; font-weight: 900; line-height: 1; }
+.name {
+  font-size: 42px;
+  font-weight: 800;
+  line-height: 1.1;
+  margin: 0 0 16px 0;
+  letter-spacing: -1px;
+}
+
+.competence {
+  font-size: 40px;
+  font-weight: 500;
+  margin: 0 0 6px 0;
+  letter-spacing: 2px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.framework {
+  font-size: 44px;
+  font-weight: 900;
+  line-height: 1;
+}
 
 .main-content {
   width: 100%;
@@ -71,50 +87,69 @@
   letter-spacing: -1px;
   background: linear-gradient(to bottom, #111 0%, #222 46%, #444 50%, #111 54%, #000 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0px 1px 1px rgba(0,0,0,0.05));
-}
-
-.info-section {
-  width: 100%;
+  filter: drop-shadow(0px 1px 1px rgba(0, 0, 0, 0.05));
 }
 
 .info-section:first-of-type {
   margin-bottom: 36px;
 }
 
-.projects-container {
+.projects-container, .info-section {
   width: 100%;
 }
 
-.item-main { font-weight: 700; font-size: 19px; color: #1a1a1a; margin: 0; }
-.item-sub { font-size: 15px; color: #666; margin: 4px 0; display: block; }
-.info-list { list-style: none; padding: 0; margin: 0; }
+.item-main, .info-list > li {
+  font-weight: 700;
+  font-size: 19px;
+  color: #1e1e1e;
+  margin: 0;
+}
 
 .info-list > li {
   margin-bottom: 16px;
-  font-size: 19px;
-  font-weight: 700;
-  color: #1a1a1a;
   line-height: 1.4;
 }
 
-.sub-list { margin-top: 8px; padding-left: 18px; }
-.sub-list p { margin: 4px 0; font-size: 16px; font-weight: 400; color: #444; }
+.item-sub {
+  font-size: 15px;
+  color: #666;
+  margin: 4px 0;
+  display: block;
+}
+
+.info-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sub-list {
+  margin-top: 8px;
+  padding-left: 18px;
+}
+
+.sub-list p {
+  margin: 4px 0;
+  font-size: 16px;
+  font-weight: 400;
+  color: #444;
+}
 
 @media (max-width: 767px) {
-  .app { 
+  .app {
     background: #ffffff;
-    padding: 0; 
+    padding: 0;
   }
   
-  .resume { 
-    border-radius: 0; 
+  .resume {
+    border-radius: 0;
     box-shadow: none;
   }
 
-  .content-wrapper, .resume-header .content-wrapper { 
-    padding: 0 24px; 
+  .content-wrapper {
+    padding: 0 24px;
   }
 
   .name { font-size: 32px; }
@@ -170,6 +205,7 @@ const App = () => {
                   <div className="sub-list">
                     <p>- Python, C#</p>
                     <p>- Проектирование баз данных, SQL</p>
+                    <p>- Изучаю Node.js</p>
                   </div>
                 </li>
                 <li>
@@ -178,6 +214,7 @@ const App = () => {
                     <p>- DevOps, Git, Docker</p>
                     <p>- UX/UI дизайн</p>
                     <p>- Разработка игр</p>
+                    <p>- B2 английский</p>
                   </div>
                 </li>
               </ul>
@@ -192,6 +229,7 @@ const App = () => {
                     title={project.title}
                     description={project.description}
                     images={project.images}
+                    imageDescriptions={project.imageDescriptions}
                     className={project.className}
                   />
                 ))}
@@ -227,12 +265,13 @@ export default App;
 
 .project-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
 }
 
 .project-visual {
+  position: relative;
   width: 100%;
-  height: 250px;
+  height: 300px;
   background: #eee;
   overflow: hidden;
   cursor: pointer;
@@ -273,24 +312,98 @@ export default App;
   margin: 0;
 }
 
+.nav-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 80px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  transition: opacity 0.3s ease;
+}
+
+.nav-arrow::after {
+  content: '';
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-top: 3px solid #ffffff;
+  border-left: 3px solid #ffffff;
+  filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.9)) 
+          drop-shadow(0 0 8px rgba(0, 0, 0, 0.5));
+  transition: transform 0.2s ease, filter 0.2s ease, scale 0.2s ease;
+}
+
+.nav-arrow.prev {
+  left: 10px;
+}
+.nav-arrow.prev::after {
+  transform: rotate(-45deg);
+}
+
+.nav-arrow.next {
+  right: 10px;
+}
+.nav-arrow.next::after {
+  transform: rotate(135deg);
+}
+
+.nav-arrow:hover::after {
+  filter: drop-shadow(0 0 3px rgba(0, 0, 0, 1)) 
+          drop-shadow(0 0 12px rgba(0, 0, 0, 0.7));
+  scale: 1.1;
+}
+
+.project-card.floral-special .project-info {
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.project-card.floral-special .project-card-title,
+.project-card.floral-special .project-card-description {
+  background: linear-gradient(to bottom, #fff 0%, #fff 45%, #d1d1d1 50%, #fff 55%, #fff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0px 0px 1px rgba(255, 255, 255, 0.8),
+               0px 0px 12px rgba(255, 255, 255, 0.3),
+               0px 4px 12px rgba(0, 0, 0, 0.25);
+  filter: drop-shadow(0 0 0.5px rgba(255,255,255,0.5));
+}
+
+.project-card.floral-special .project-card-title {
+  font-size: 26px;
+  letter-spacing: -0.5px;
+}
+
+.project-card.floral-special .project-card-description {
+  font-weight: 500;
+  opacity: 0.95;
+}
+
 @media (min-width: 768px) {
   .project-card {
     flex-direction: row;
     height: 380px;
   }
 
-  .project-card.figure-special {
-    height: 715px;
-  }
+  .project-card.figure-special { height: 715px; }
 
   .project-visual {
     width: 60%;
     height: 100%;
   }
 
-  .project-info {
-    width: 40%;
-  }
+  .project-info { width: 40%; }
 
   .project-card.expanded {
     height: auto !important;
@@ -298,9 +411,7 @@ export default App;
     max-height: 2500px;
   }
 
-  .project-card.figure-special.expanded {
-    max-height: 3000px;
-  }
+  .project-card.figure-special.expanded { max-height: 3000px; }
 
   .project-card.expanded .project-visual {
     width: 100% !important;
@@ -324,48 +435,33 @@ export default App;
 }
 
 @media (max-width: 767px) {
+  .project-card, 
   .project-card.figure-special {
-    min-height: 715px !important;
+    min-height: auto !important;
+    height: auto !important;
+    display: flex;
+    flex-direction: column;
   }
 
-  .project-card.figure-special .project-visual {
-    height: 495px !important;
-    min-height: 495px !important;
+  .project-card.figure-special .project-visual,
+  .project-visual {
+    width: 100% !important;
+    height: auto !important;
+    min-height: auto !important;
   }
-}
 
-.project-card.floral-special .project-info {
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  border-left: 1px solid rgba(255, 255, 255, 0.1);
-}
+  .project-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+  }
 
-.project-card.floral-special .project-card-title,
-.project-card.floral-special .project-card-description {
-  background: linear-gradient(to bottom, #fff 0%, #fff 45%, #d1d1d1 50%, #fff 55%, #fff 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-shadow: 0px 0px 1px rgba(255, 255, 255, 0.8),
-               0px 0px 12px rgba(255, 255, 255, 0.3),
-               0px 4px 6px rgba(0, 0, 0, 0.25);
-  filter: drop-shadow(0 0 0.5px rgba(255,255,255,0.5));
-}
-
-.project-card.floral-special .project-card-title {
-  font-size: 26px;
-  letter-spacing: -0.5px;
-}
-
-.project-card.floral-special .project-card-description {
-  font-weight: 500;
-  opacity: 0.95;
-}
-
-@media (max-width: 767px) {
-  .project-card.floral-special .project-info {
-    border-left: none;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  .project-info {
+    width: 100% !important;
+    padding: 24px !important;
+    position: static !important;
+    opacity: 1 !important;
   }
 }
 --------------------------------------------------------------------------------
@@ -390,12 +486,13 @@ export default App;
 
 .project-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
 }
 
 .project-visual {
+  position: relative;
   width: 100%;
-  height: 250px;
+  height: 300px;
   background: #eee;
   overflow: hidden;
   cursor: pointer;
@@ -436,24 +533,98 @@ export default App;
   margin: 0;
 }
 
+.nav-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 80px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  transition: opacity 0.3s ease;
+}
+
+.nav-arrow::after {
+  content: '';
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-top: 3px solid #ffffff;
+  border-left: 3px solid #ffffff;
+  filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.9)) 
+          drop-shadow(0 0 8px rgba(0, 0, 0, 0.5));
+  transition: transform 0.2s ease, filter 0.2s ease, scale 0.2s ease;
+}
+
+.nav-arrow.prev {
+  left: 10px;
+}
+.nav-arrow.prev::after {
+  transform: rotate(-45deg);
+}
+
+.nav-arrow.next {
+  right: 10px;
+}
+.nav-arrow.next::after {
+  transform: rotate(135deg);
+}
+
+.nav-arrow:hover::after {
+  filter: drop-shadow(0 0 3px rgba(0, 0, 0, 1)) 
+          drop-shadow(0 0 12px rgba(0, 0, 0, 0.7));
+  scale: 1.1;
+}
+
+.project-card.floral-special .project-info {
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.project-card.floral-special .project-card-title,
+.project-card.floral-special .project-card-description {
+  background: linear-gradient(to bottom, #fff 0%, #fff 45%, #d1d1d1 50%, #fff 55%, #fff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0px 0px 1px rgba(255, 255, 255, 0.8),
+               0px 0px 12px rgba(255, 255, 255, 0.3),
+               0px 4px 12px rgba(0, 0, 0, 0.25);
+  filter: drop-shadow(0 0 0.5px rgba(255,255,255,0.5));
+}
+
+.project-card.floral-special .project-card-title {
+  font-size: 26px;
+  letter-spacing: -0.5px;
+}
+
+.project-card.floral-special .project-card-description {
+  font-weight: 500;
+  opacity: 0.95;
+}
+
 @media (min-width: 768px) {
   .project-card {
     flex-direction: row;
     height: 380px;
   }
 
-  .project-card.figure-special {
-    height: 715px;
-  }
+  .project-card.figure-special { height: 715px; }
 
   .project-visual {
     width: 60%;
     height: 100%;
   }
 
-  .project-info {
-    width: 40%;
-  }
+  .project-info { width: 40%; }
 
   .project-card.expanded {
     height: auto !important;
@@ -461,9 +632,7 @@ export default App;
     max-height: 2500px;
   }
 
-  .project-card.figure-special.expanded {
-    max-height: 3000px;
-  }
+  .project-card.figure-special.expanded { max-height: 3000px; }
 
   .project-card.expanded .project-visual {
     width: 100% !important;
@@ -487,48 +656,33 @@ export default App;
 }
 
 @media (max-width: 767px) {
+  .project-card, 
   .project-card.figure-special {
-    min-height: 715px !important;
+    min-height: auto !important;
+    height: auto !important;
+    display: flex;
+    flex-direction: column;
   }
 
-  .project-card.figure-special .project-visual {
-    height: 495px !important;
-    min-height: 495px !important;
+  .project-card.figure-special .project-visual,
+  .project-visual {
+    width: 100% !important;
+    height: auto !important;
+    min-height: auto !important;
   }
-}
 
-.project-card.floral-special .project-info {
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  border-left: 1px solid rgba(255, 255, 255, 0.1);
-}
+  .project-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+  }
 
-.project-card.floral-special .project-card-title,
-.project-card.floral-special .project-card-description {
-  background: linear-gradient(to bottom, #fff 0%, #fff 45%, #d1d1d1 50%, #fff 55%, #fff 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-shadow: 0px 0px 1px rgba(255, 255, 255, 0.8),
-               0px 0px 12px rgba(255, 255, 255, 0.3),
-               0px 4px 6px rgba(0, 0, 0, 0.25);
-  filter: drop-shadow(0 0 0.5px rgba(255,255,255,0.5));
-}
-
-.project-card.floral-special .project-card-title {
-  font-size: 26px;
-  letter-spacing: -0.5px;
-}
-
-.project-card.floral-special .project-card-description {
-  font-weight: 500;
-  opacity: 0.95;
-}
-
-@media (max-width: 767px) {
-  .project-card.floral-special .project-info {
-    border-left: none;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  .project-info {
+    width: 100% !important;
+    padding: 24px !important;
+    position: static !important;
+    opacity: 1 !important;
   }
 }
 --------------------------------------------------------------------------------
@@ -542,11 +696,13 @@ interface ProjectProps {
   title: string;
   description: string;
   images: string[];
+  imageDescriptions?: string[];
   className?: string;
 }
 
-const ProjectCard: React.FC<ProjectProps> = ({ title, description, images, className }) => {
+const ProjectCard: React.FC<ProjectProps> = ({ title, description, images, imageDescriptions, className }) => {
   const [isExpanded, setIsExpanded] = useState(false);
+  const [currentImgIndex, setCurrentImgIndex] = useState(0);
   const headerBg = `${import.meta.env.BASE_URL}images/header-background.jpg`;
 
   const toggleExpand = () => {
@@ -555,18 +711,46 @@ const ProjectCard: React.FC<ProjectProps> = ({ title, description, images, class
     }
   };
 
-  const infoStyle = className === 'floral-special' 
-    ? { backgroundImage: `linear-gradient(to top, rgba(0, 0, 0, 0.2) 0%, transparent 40%), url(${headerBg})` } 
+  const nextSlide = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setCurrentImgIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+  };
+
+  const prevSlide = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setCurrentImgIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+  };
+
+  const currentDescription = (imageDescriptions && imageDescriptions[currentImgIndex])
+    ? imageDescriptions[currentImgIndex]
+    : description;
+
+  const infoStyle = className === 'floral-special'
+    ? { backgroundImage: `linear-gradient(to top, rgba(0, 0, 0, 0.2) 0%, transparent 40%), url(${headerBg})` }
     : {};
 
   return (
     <div className={`project-card ${className || ''} ${isExpanded ? 'expanded' : ''}`}>
       <div className="project-visual" onClick={toggleExpand}>
-        <img src={images[0]} alt={title} className="project-img" />
+        
+        {images.length > 1 && (
+          <div className="slider-nav">
+            <button className="nav-arrow prev" onClick={prevSlide} aria-label="Previous"></button>
+            <button className="nav-arrow next" onClick={nextSlide} aria-label="Next"></button>
+          </div>
+        )}
+
+        <img
+          src={images[currentImgIndex]}
+          alt={`${title} - image ${currentImgIndex + 1}`}
+          className="project-img"
+          loading="lazy"
+        />
       </div>
+      
       <div className="project-info" style={infoStyle}>
         <h3 className="project-card-title">{title}</h3>
-        <p className="project-card-description">{description}</p>
+        <p className="project-card-description">{currentDescription}</p>
       </div>
     </div>
   );
@@ -584,11 +768,13 @@ interface ProjectProps {
   title: string;
   description: string;
   images: string[];
+  imageDescriptions?: string[];
   className?: string;
 }
 
-const ProjectCard: React.FC<ProjectProps> = ({ title, description, images, className }) => {
+const ProjectCard: React.FC<ProjectProps> = ({ title, description, images, imageDescriptions, className }) => {
   const [isExpanded, setIsExpanded] = useState(false);
+  const [currentImgIndex, setCurrentImgIndex] = useState(0);
   const headerBg = `${import.meta.env.BASE_URL}images/header-background.jpg`;
 
   const toggleExpand = () => {
@@ -597,18 +783,46 @@ const ProjectCard: React.FC<ProjectProps> = ({ title, description, images, class
     }
   };
 
-  const infoStyle = className === 'floral-special' 
-    ? { backgroundImage: `linear-gradient(to top, rgba(0, 0, 0, 0.2) 0%, transparent 40%), url(${headerBg})` } 
+  const nextSlide = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setCurrentImgIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+  };
+
+  const prevSlide = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setCurrentImgIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+  };
+
+  const currentDescription = (imageDescriptions && imageDescriptions[currentImgIndex])
+    ? imageDescriptions[currentImgIndex]
+    : description;
+
+  const infoStyle = className === 'floral-special'
+    ? { backgroundImage: `linear-gradient(to top, rgba(0, 0, 0, 0.2) 0%, transparent 40%), url(${headerBg})` }
     : {};
 
   return (
     <div className={`project-card ${className || ''} ${isExpanded ? 'expanded' : ''}`}>
       <div className="project-visual" onClick={toggleExpand}>
-        <img src={images[0]} alt={title} className="project-img" />
+        
+        {images.length > 1 && (
+          <div className="slider-nav">
+            <button className="nav-arrow prev" onClick={prevSlide} aria-label="Previous"></button>
+            <button className="nav-arrow next" onClick={nextSlide} aria-label="Next"></button>
+          </div>
+        )}
+
+        <img
+          src={images[currentImgIndex]}
+          alt={`${title} - image ${currentImgIndex + 1}`}
+          className="project-img"
+          loading="lazy"
+        />
       </div>
+      
       <div className="project-info" style={infoStyle}>
         <h3 className="project-card-title">{title}</h3>
-        <p className="project-card-description">{description}</p>
+        <p className="project-card-description">{currentDescription}</p>
       </div>
     </div>
   );
@@ -623,29 +837,45 @@ export interface Project {
   title: string;
   description: string;
   images: string[];
+  imageDescriptions?: string[];
   className?: string;
 }
 
 export const projectsData: Project[] = [
 {
     title: "Бутон - графический редактор для флористов",
-    description: "Делать букеты. В активной разработке",
-    images: ["./images/projects/floral-editor/picture1.jpg"],
+    description: "",
+    images: [
+      "./images/projects/floral-editor/picture2.jpg",
+      "./images/projects/floral-editor/picture3.jpg",
+      "./images/projects/floral-editor/picture1.jpg",
+      "./images/projects/floral-editor/picture4.jpg"
+    ],
+    imageDescriptions: [`Проект развивается второй год и направлен на оптимизацию обучения флористов.
+      Стек: React, TypeScript, Electron.
+      Реализованы лендинг, демо-версия в вебе и десктоп-приложение, выполненное полностью фронтенд-силами.`,
+      `Редактирование цветка позволяет собрать букет любой конфигурации. Уже сейчас флористы положительно отзываются о проекте
+      - он позволяет практиковаться в сборке и проектировании букетов.`,
+      `В следующем релизе программа обзаведётся ИИ-обработчиком букетов для повышения реализма`,
+      `Пользователь может управлять букетами в хранилище на своём компьютере`], 
     className: "floral-special"
   },
   {
-    title: "Игра на React",
-    description: "Браузерная игра с использованием React и TypeScript. Заброшено",
-    images: ["./images/projects/react-game/picture1.jpg"]
-  },
-  {
     title: "Интернет-магазин цветов",
-    description: "Классический интернет-магазин с каталогом и корзиной. В разработке",
+    description: "Классический интернет-магазин с каталогом и корзиной. Интеграция с облачным хранилищем Cloudflare. В разработке.",
     images: ["./images/projects/floral-market/picture1.jpg"]
   },
   {
-    title: "Кукла",
-    description: "Сшито",
+    title: "2.5D игра на React",
+    description: `Браузерная игра с персонажем, главами и кастомными хуками.
+    Система обработки коллизий в 2.5D пространстве, оптимизация, анимации.`,
+    images: ["./images/projects/react-game/picture1.jpg",
+      "./images/projects/react-game/picture2.jpg"
+    ]
+  },
+  {
+    title: "",
+    description: "А ещё я шью куклы",
     images: ["./images/projects/figure/picture1.jpg"],
     className: "figure-special"
   }
@@ -660,10 +890,22 @@ export const projectsData: Project[] = [
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
 }
 
 body {
   font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+img {
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.no-select {
+  user-select: none;
+  -webkit-user-select: none;
 }
 --------------------------------------------------------------------------------
 
