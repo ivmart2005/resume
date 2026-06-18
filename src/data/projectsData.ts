@@ -53,11 +53,11 @@ export const projectsData: Project[] = [
     images: ["./images/projects/react-game/picture1.jpg",
       "./images/projects/react-game/picture2.jpg"
     ]
-  },
-  {
-    title: "",
-    description: "А ещё я шью куклы",
-    images: ["./images/projects/figure/picture1.jpg"],
-    className: "figure-special"
   }
+  // {
+  //   title: "",
+  //   description: "А ещё я шью куклы",
+  //   images: ["./images/projects/figure/picture1.jpg"],
+  //   className: "figure-special"
+  // }
 ];
