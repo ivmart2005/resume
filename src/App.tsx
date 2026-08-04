@@ -26,7 +26,7 @@ const App = () => {
                 <p className="item-main">Курсы</p>
                 <p className="item-sub">Интенсив по фронтенду, React, Тинькофф банк</p>
                 <p className="item-main">Опыт работы</p>
-                <p className="item-sub">Проходил практику как фуллстек-разработчик (Next.js 12, Node.js) в ООО "ПроБои"</p>
+                <p className="item-sub">Проходил практику и работал как фуллстек-разработчик (React, Next.js, Node.js) в ООО "ПроБои"</p>
               </div>
             </section>
 
