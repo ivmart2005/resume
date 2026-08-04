@@ -12,7 +12,7 @@ const App = () => {
           <div className="content-wrapper">
             <h1 className="name">Мартемьянов Иван Алексеевич</h1>
             <p className="competence">Фронтенд-разработка</p>
-            <p className="framework">React + TS</p>
+            <p className="framework">React, TS, Next.js, Node.js</p>
           </div>
         </header>
 
@@ -25,8 +25,8 @@ const App = () => {
                 <p className="item-sub">Разработка информационных систем, Программная инженерия, 3 курс</p>
                 <p className="item-main">Курсы</p>
                 <p className="item-sub">Интенсив по фронтенду, React, Тинькофф банк</p>
-                <p className="item-main">Практика</p>
-                <p className="item-sub">Прохожу практику как фронтенд-разработчки (Next.js 12, Node.js) в ООО "ПроБои"</p>
+                <p className="item-main">Опыт работы</p>
+                <p className="item-sub">Проходил практику как фуллстек-разработчик (Next.js 12, Node.js) в ООО "ПроБои"</p>
               </div>
             </section>
 
@@ -44,15 +44,15 @@ const App = () => {
                 <li>
                   • Бэкенд-разработка
                   <div className="sub-list">
+                    <p>- Node.js</p>
                     <p>- Python, C#</p>
                     <p>- Проектирование баз данных, SQL</p>
-                    <p>- Изучаю Node.js</p>
                   </div>
                 </li>
                 <li>
                   • Прочие компетенции
                   <div className="sub-list">
-                    <p>- DevOps, Git, Docker</p>
+                    <p>- Git</p>
                     <p>- UX/UI дизайн</p>
                     <p>- Разработка игр</p>
                     <p>- B2 английский</p>

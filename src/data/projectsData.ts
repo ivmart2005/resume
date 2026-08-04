@@ -7,7 +7,15 @@ export interface Project {
 }
 
 export const projectsData: Project[] = [
-{
+  {
+    title: "Практика в Про-Бои",
+    description: "",
+    images: [
+      "./images/projects/pro-boi/screenshot.jpg",
+    ],
+    imageDescriptions: [`Под руководством ментора разрабатывал портал для единоборств на Next.js 12, TypeScript в рамках стартапа`]
+  },
+  {
     title: "Бутон - графический редактор для флористов",
     description: "",
     images: [
@@ -32,14 +40,6 @@ export const projectsData: Project[] = [
       "./images/projects/landing/buton.jpg",
     ],
     imageDescriptions: [`Наш лендинг и ссылка на скачивание — buton-editor.ru`]
-  },
-  {
-    title: "Практика в Про-Бои",
-    description: "",
-    images: [
-      "./images/projects/pro-boi/screenshot.jpg",
-    ],
-    imageDescriptions: [`Под руководством ментора разрабатываю фронтенд-часть портала для единоборств на Next.js 12, TypeScript, в рамках командного проекта на GitLab.`]
   },
   {
     title: "Интернет-магазин цветов",
