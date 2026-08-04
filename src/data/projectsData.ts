@@ -13,7 +13,7 @@ export const projectsData: Project[] = [
     images: [
       "./images/projects/pro-boi/screenshot.jpg",
     ],
-    imageDescriptions: [`Под руководством ментора разрабатывал портал для единоборств на Next.js 12, TypeScript в рамках стартапа`]
+    imageDescriptions: [`Под руководством ментора разрабатывал портал для единоборств на Next.js, TypeScript, Node.js в рамках стартапа`]
   },
   {
     title: "Бутон - графический редактор для флористов",
