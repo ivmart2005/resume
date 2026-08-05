@@ -8,12 +8,12 @@ export interface Project {
 
 export const projectsData: Project[] = [
   {
-    title: "Практика в Про-Бои",
+    title: "Практика и работа в Про-Бои",
     description: "",
     images: [
       "./images/projects/pro-boi/screenshot.jpg",
     ],
-    imageDescriptions: [`Под руководством ментора разрабатывал портал для единоборств на Next.js, TypeScript, Node.js в рамках стартапа`]
+    imageDescriptions: [`Под руководством ментора разрабатывал портал для единоборств на Next.js, TypeScript, Node.js (фуллстек) в рамках стартапа`]
   },
   {
     title: "Бутон - графический редактор для флористов",
