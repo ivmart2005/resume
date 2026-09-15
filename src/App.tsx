@@ -12,7 +12,7 @@ const App = () => {
           <div className="content-wrapper">
             <h1 className="name">Мартемьянов Иван Алексеевич</h1>
             <p className="competence">Фронтенд-разработка</p>
-            <p className="framework">React • TS • Next.js • Node.js</p>
+            <p className="framework">React  •  TS  •  Next.js  •  Node.js</p>
           </div>
         </header>
 
@@ -41,33 +41,30 @@ const App = () => {
 
             <section className="info-section">
               <h2 className="section-title">Компетенции</h2>
-              <ul className="info-list">
-                <li>
-                  • Фронтенд-разработка
+              <div className="competencies-grid">
+                <div className="competency-block">
+                  <p className="item-main">Фронтенд-разработка</p>
                   <div className="sub-list">
-                    <p>- React, Next.js</p>
-                    <p>- Javascript, Typescript</p>
-                    <p>- HTML, CSS, SCSS</p>
+                    <p>React  •  Next.js</p>
+                    <p>JavaScript  •  TypeScript</p>
+                    <p>HTML  •  CSS  •  SCSS</p>
                   </div>
-                </li>
-                <li>
-                  • Бэкенд-разработка
+                </div>
+                <div className="competency-block">
+                  <p className="item-main">Бэкенд-разработка</p>
                   <div className="sub-list">
-                    <p>- Node.js</p>
-                    <p>- Python, C#</p>
-                    <p>- Проектирование баз данных, SQL</p>
+                    <p>Node.js</p>
+                    <p>Python  •  C#</p>
+                    <p>Проектирование баз данных  •  SQL</p>
                   </div>
-                </li>
-                <li>
-                  • Прочие компетенции
+                </div>
+                <div className="competency-block competency-other">
+                  <p className="item-main">Прочие компетенции</p>
                   <div className="sub-list">
-                    <p>- Git</p>
-                    <p>- UX/UI дизайн</p>
-                    <p>- Разработка игр</p>
-                    <p>- B2 английский</p>
+                    <p>Git  •  UX/UI дизайн  •  Разработка игр  •  B2 английский</p>
                   </div>
-                </li>
-              </ul>
+                </div>
+              </div>
             </section>
 
             <section className="info-section">
