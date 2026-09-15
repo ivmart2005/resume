@@ -32,7 +32,7 @@ const App = () => {
                     фуллстек-разработчик (React, Next.js, Node.js) в ООО "ПроБои"
                   </span>
                 </p>
-                <p className="item-list">— разрабатывал и верстал UI компоненты в FSD проекте на Next.js</p>
+                <p className="item-list">— разрабатывал и верстал UI-компоненты в проекте с архитектурой FSD на Next.js</p>
                 <p className="item-list">— реализовывал логику и API-запросы на Node.js</p>
                 <p className="item-list">— настраивал базовое SEO</p>
                 <p className="item-list">— работал в команде по Git-flow</p>
