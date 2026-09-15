@@ -22,7 +22,7 @@ const App = () => {
               <h2 className="section-title">Образование</h2>
               <div className="section-item">
                 <p className="item-main">НИУ ВШЭ Пермь</p>
-                <p className="item-sub">Разработка информационных систем, Программная инженерия, 3 курс</p>
+                <p className="item-sub">Разработка информационных систем, Программная инженерия, 4 курс</p>
                 <p className="item-main">Курсы</p>
                 <p className="item-sub">Интенсив по фронтенду, React, Тинькофф банк</p>
                 <p className="item-main">Опыт работы</p>
